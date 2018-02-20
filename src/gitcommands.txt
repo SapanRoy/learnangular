@@ -1,9 +1,16 @@
+
+git intialization 
+git init
+
 Current repository
 git remote get-url origin
 
 To connect to repository
 git remote add origin URL
 e.g git remote add origin https://github.com/SapanRoy/learnangular.git
+
+create a branch
+git checkout -b branchName
 
 Switch to branch
 git checkout master

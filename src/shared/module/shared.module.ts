@@ -6,6 +6,8 @@ import { DataService } from '../data.service';
 import { OnlyDigitsDirective } from './../directives/only-digits.directive';
 import { TitleCasePipe } from '../pipes/title-case-pipe';
 import { ReversePipe } from '../pipes/reverse.pipe';
+import { FindStringService } from '../string-search.service';
+
 
 
 @NgModule({
@@ -23,6 +25,6 @@ import { ReversePipe } from '../pipes/reverse.pipe';
         TitleCasePipe,
         ReversePipe
     ],
-    providers: [CountryService, DataService]
+    providers: [CountryService, DataService, FindStringService]
 })
 export class SharedModule { }
