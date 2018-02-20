@@ -1,0 +1,9 @@
+<div id="parent">
+  Parent
+  <div class="col">
+    <button (click)="sendMessage()">Parent to child</button>
+  </div>
+  <p>{{messageFromChild}}</p>
+  <p>{{message}}</p>
+  <app-child (childtoParentEvent)="childtoParentEventHandler($event)" [messageForChild]="parentMessage"></app-child>
+</div>

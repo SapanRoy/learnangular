@@ -1,0 +1,14 @@
+#sibling {
+    width: 500px;
+    height: 500px;
+    text-align: center;
+    background-color:gainsboro;
+    position: relative;
+
+
+}
+  #sibling button {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+  }

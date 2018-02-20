@@ -1,0 +1,97 @@
+<br/>
+<br/>
+<div class="col-md-4">
+    <form autocomplete="off" #teamForm="ngForm" (ngSubmit)="addTeam(teamForm.value)">
+
+        <div class="form-group">
+            <label for="country">Country</label>
+            <em *ngIf='teamForm.controls.selectedCountry?.invalid && teamForm.controls.selectedCountry?.touched'>(required)</em>
+            <select class='select-option' required (ngModel)='selectedCountry' name='selectedCountry'>
+                <option class='option' *ngFor='let country of cricWorld.countries' [ngValue]="country">{{country.Name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="team">Team</label>
+            <!--require does not stopped us to submitting the form-->
+            <em *ngIf='teamForm.controls.teamName?.invalid && teamForm.controls.teamName?.touched'>(required)</em>
+            <input type="text" required (ngModel)='teamName' name='teamName' placeholder="team name..." />
+        </div>
+        <button type="submit" [disabled]="!teamForm.valid" class="btn-default">Add team </button>
+        <!-- {{selectedCountry? 'for':''}} {{ selectedCountry?.Name}} -->
+    </form>
+</div>
+<hr/>
+<br/>
+<!-- <div class="col-md-4">
+    teamForm.valid: {{teamForm.valid}} <br/>
+    teamForm.invalid: {{teamForm.invalid}} <br/>
+    teamForm.dirty: {{teamForm.dirty}} <br/>
+    teamForm.pristine: {{teamForm.pristine}} <br/>
+    teamForm.submitted: {{teamForm.submitted}} <br/>
+    teamForm.touched: {{teamForm.touched}} <br/>
+    teamForm.untouched: {{teamForm.untouched}} <br/>
+</div> -->
+<hr/>
+<!-- <br/>
+<div class="col-md-4">
+        teamForm.controls.selectedCountry.valid: {{teamForm.controls.selectedCountry.valid}} <br/>
+        teamForm.controls.selectedCountry.invalid: {{teamForm.controls.selectedCountry.invalid}} <br/>
+        teamForm.controls.selectedCountry.dirty: {{teamForm.controls.selectedCountry.dirty}} <br/>
+        teamForm.controls.selectedCountry.pristine: {{teamForm.controls.selectedCountry.pristine}} <br/>
+        teamForm.controls.selectedCountry.submitted: {{teamForm.controls.selectedCountry.submitted}} <br/>
+        teamForm.controls.selectedCountry.touched: {{teamForm.controls.selectedCountry.touched}} <br/>
+        teamForm.controls.selectedCountry.untouched: {{teamForm.controls.selectedCountry.untouched}} <br/>
+    </div>
+    <hr/>
+<br/> -->
+<!-- <div class="col-md-4">
+        teamForm.controls.teamName.valid: {{teamForm.controls.teamName.valid}} <br/>
+        teamForm.controls.teamName.invalid: {{teamForm.controls.teamName.invalid}} <br/>
+        teamForm.controls.teamName.dirty: {{teamForm.controls.teamName.dirty}} <br/>
+        teamForm.controls.teamName.pristine: {{teamForm.controls.teamName.pristine}} <br/>
+        teamForm.controls.teamName.submitted: {{teamForm.controls.teamName.submitted}} <br/>
+        teamForm.controls.teamName.touched: {{teamForm.controls.teamName.touched}} <br/>
+        teamForm.controls.teamName.untouched: {{teamForm.controls.teamName.untouched}} <br/>
+    </div> -->
+
+
+<div class="col-md-6 table pt-4">
+    <table>
+        <tr>
+            <td>#</td>
+            <td>
+                Name
+            </td>
+            <td>
+                Country
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr *ngFor="let team of teams let teamIndex = index">
+            <td>{{teamIndex+1}}</td>
+            <td>
+                <span *ngIf="!team.IsEditing">{{team.Name | titleCase}}</span>
+                <input type="text" [(ngModel)]='team.Name' *ngIf="team.IsEditing" placeholder="team name..." />
+            </td>
+            <td>
+                <span *ngIf="!team.IsEditing">{{team.CountryName}}</span>
+                <select class='select-option' *ngIf="team.IsEditing" required [(ngModel)]='team.CountryID'>
+                    <option class='option' *ngFor='let country of cricWorld.countries' [ngValue]="country.ID">{{country.Name}}</option>
+                </select>
+                <!-- <input type="text" *ngIf="team.IsEditing" [(ngModel)]='team.CountryName' placeholder="country name..." /> -->
+            </td>
+            <td>
+                <a [routerLink]="['/team/player',team.CountryID]">+Player</a>
+            </td>
+            <td *ngIf="!team.IsEditing">
+                <button type="button" (click)="enableEditMode(team)" class="btn-alert">Edit</button>
+                <button type="button" class="btn-alert" (click)="deleteTeam(team)">Delete</button>
+            </td>
+            <td *ngIf="team.IsEditing">
+                <button type="button" class="btn-alert" (click)="updateTeam(team)">Update</button>
+                <button type="button" class="btn-alert" (click)="disableEditMode(team)">Cancel</button>
+            </td>
+        </tr>
+    </table>
+</div>

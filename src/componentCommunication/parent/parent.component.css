@@ -1,0 +1,11 @@
+
+#parent {
+    /* display: table-cell; */
+    width: 500px;
+    height: 500px;
+    /* vertical-align: middle; */
+    text-align: center;
+    background-color:darkgrey;
+  }
+  
+ 

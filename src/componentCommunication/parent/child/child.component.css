@@ -1,0 +1,13 @@
+#child {
+    display: inline-block;
+    background-color: #fff;
+    width: 200px; height: 200px;
+    position: relative;
+    top: 120px;
+  }
+
+  #child button{
+      position: absolute;
+      left: 22%;
+      top: 81%;
+  }
