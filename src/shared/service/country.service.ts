@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
-import { baseURL } from './environment.config';
+import { baseURL } from '../environment.config';
+
 
 
 @Injectable()

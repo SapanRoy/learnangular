@@ -1,7 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
-import { CountryService } from './../shared/country.service';
 import { CricWorld, Team } from '../shared/cric-world.model';
 import { TeamService } from './service/team.service';
+import { CountryService } from './../shared/service/country.service';
 
 @Component({
     selector: 'app-team',

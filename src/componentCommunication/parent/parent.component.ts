@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../shared/data.service';
+import { DataService } from '../../shared/service/data.service';
+
 
 @Component({
   selector: 'app-parent',
