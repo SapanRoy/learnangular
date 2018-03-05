@@ -14,6 +14,10 @@ import { SiblingComponent } from '../componentCommunication/sibling/sibling.comp
 import { ParentComponent } from '../componentCommunication/parent/parent.component';
 import { ChildComponent } from './../componentCommunication/parent/child/child.component';
 import { PlayersComponent } from '../players/players.component';
+import { SecureComponent } from '../security/secure/secure.component';
+import { UnsecureComponent } from '../security/unsecure/unsecure.component';
+
+
 // Services
 import { TeamService } from './../team/service/team.service';
 import { TeamServiceNew } from '../sample/services/team.service';
@@ -29,7 +33,9 @@ import { PlayerService } from './../players/service/player.service';
     ParentComponent,
     ChildComponent,
     SiblingComponent,
-    PlayersComponent
+    PlayersComponent,
+    SecureComponent,
+    UnsecureComponent
   ],
   imports: [
     BrowserModule,

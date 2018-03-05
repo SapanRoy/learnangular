@@ -17,9 +17,7 @@ export class PlayersComponent implements OnInit {
     countryID: number;
     constructor(private router: Router,
         private activatedRoute: ActivatedRoute,
-        private playerService: PlayerService) { 
-
-        }
+        private playerService: PlayerService) { }
     playerForm: FormGroup;
     ngOnInit() {
         this.activatedRouteSubscription = this.activatedRoute.params.subscribe(param => {
