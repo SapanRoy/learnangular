@@ -12,7 +12,7 @@ describe('Find string service', () => {
             ]
         });
     });
-    fit('Should contain India',
+    xit('Should contain India',
         inject([FindStringService], (findStringService) => {
             expect(findStringService).toBeDefined();
             let result = findStringService.doesContainString('India', 'India is my country');
