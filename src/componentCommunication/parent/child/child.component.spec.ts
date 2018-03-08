@@ -1,25 +1,12 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ChildComponentMethods } from './child.methods';
 
-import { ChildComponent } from './child.component';
-
-// describe('ChildComponent', () => {
-//   let component: ChildComponent;
-//   let fixture: ComponentFixture<ChildComponent>;
-
-//   beforeEach(async(() => {
-//     TestBed.configureTestingModule({
-//       declarations: [ ChildComponent ]
-//     })
-//     .compileComponents();
-//   }));
-
-//   beforeEach(() => {
-//     fixture = TestBed.createComponent(ChildComponent);
-//     component = fixture.componentInstance;
-//     fixture.detectChanges();
-//   });
-
-//   it('should create', () => {
-//     expect(component).toBeTruthy();
-//   });
-// });
+describe('ChildMethodTest', () => {
+    const childComponentMethods: any = new ChildComponentMethods();
+    // const result = childComponentMethods.add(4, 2);
+      fit('4 + 2 should return 6', () => {
+        expect(childComponentMethods.add(4, 2)).toEqual(6);
+    });
+    fit('-2 + -2 should return -4', () => {
+        expect(childComponentMethods.add(-2, -2)).toEqual(-4);
+    });
+});

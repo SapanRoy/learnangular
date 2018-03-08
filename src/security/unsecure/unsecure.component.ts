@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browser';
+import { SecurityContext } from '@angular/platform-browser/src/security/dom_sanitization_service';
 
 @Component({
     selector: 'app-unsecure',
@@ -12,6 +13,7 @@ export class UnsecureComponent implements OnInit {
     dangerousVideoUrl: string;
     trustedUrl: SafeUrl;
     videoUrl: SafeResourceUrl;
+    html: string;
     constructor(private sanitizer: DomSanitizer) {
         // javascript: URLs are dangerous if attacker controlled.
         // Angular sanitizes them in data binding, but you can

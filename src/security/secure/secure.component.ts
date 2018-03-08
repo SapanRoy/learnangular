@@ -17,10 +17,10 @@ export class SecureComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.activatedRouteSubscription = this.activatedRoute.params.subscribe(param => {
-            this.name = param['name'];
-        });
-        this.stringContent = 'Template <script>alert("Hello")</script> <b>Syntax</b>';
+        // this.activatedRouteSubscription = this.activatedRoute.params.subscribe(param => {
+        //     this.name = param['name'];
+        // });
+        this.stringContent = 'Template <script>alert("Hello")</script> <b>12Syntax</b>';
         // this.name = '<script>alert("0wned")</script>';
     }
 }
