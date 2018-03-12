@@ -5,7 +5,6 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 describe(`FakeHttpClientResponses`, () => {
-
   beforeEach(() => {
     // 0. set up the test environment
     TestBed.configureTestingModule({
@@ -23,8 +22,6 @@ describe(`FakeHttpClientResponses`, () => {
       inject([HttpClient, HttpTestingController], (http: HttpClient, backend: HttpTestingController) => {
         // 3. send a simple request
         http.get(`${baseURL}/team`).subscribe();
-        // http.get(`${baseURL}/team`).subscribe();
-
         // 4. HttpTestingController supersedes `MockBackend` from the "old" Http package
         backend.expectOne({
           url: `${baseURL}/team`,
